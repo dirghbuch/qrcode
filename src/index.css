@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ticket {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 122px;
+  left: 329px;
+}

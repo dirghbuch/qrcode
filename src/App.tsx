@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import React from "react";
 import { QRCode } from "react-qrcode-logo";
 import Background from "./north-invite.jpeg";
@@ -6,7 +5,9 @@ import Background from "./north-invite.jpeg";
 var sectionStyle = {
   width: "200px",
   height: "100px",
-  backgroundImage: `url(${Background})`,
+  position: "absolute",
+  top: "100px",
+  left: "300px",
 };
 const App: React.FC = () => {
   const getIdFromParam = (
@@ -22,11 +23,18 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <div style={sectionStyle}>
+      <img
+        src={Background}
+        alt="background"
+        height={"300px"}
+        width={"500px"}
+      ></img>
+      <div className={"ticket"}>
         <QRCode
           logoOnLoad={() => console.log("logo loaded")}
           {...{
             value: getIdFromParam(queryParameters),
+            size: 96,
           }}
         />
       </div>
