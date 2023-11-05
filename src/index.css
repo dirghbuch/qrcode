@@ -19,3 +19,12 @@ code {
   top: 122px;
   left: 329px;
 }
+
+.person {
+  position: absolute;
+  top: 238px;
+  left: 50px;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+}

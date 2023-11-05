@@ -2,18 +2,20 @@ import React from "react";
 import { QRCode } from "react-qrcode-logo";
 import Background from "./north-invite.jpeg";
 
-var sectionStyle = {
-  width: "200px",
-  height: "100px",
-  position: "absolute",
-  top: "100px",
-  left: "300px",
-};
 const App: React.FC = () => {
   const getIdFromParam = (
     queryParameters: URLSearchParams
   ): string | undefined => {
     const id = queryParameters.get("id");
+    if (id != null) {
+      return id;
+    }
+    return undefined;
+  };
+  const getPersonsFromParam = (
+    queryParameters: URLSearchParams
+  ): string | undefined => {
+    const id = queryParameters.get("persons");
     if (id != null) {
       return id;
     }
@@ -38,6 +40,7 @@ const App: React.FC = () => {
           }}
         />
       </div>
+      <div className={"person"}>{getPersonsFromParam(queryParameters)}</div>
     </div>
   );
 };
